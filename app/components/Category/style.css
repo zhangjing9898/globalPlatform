@@ -1,0 +1,103 @@
+#home-category {
+  background-color: #fff;
+  padding: 10px;
+}
+#home-category .carousel-item ul {
+  width: 100%;
+  height: auto;
+}
+#home-category .carousel-item a {
+  color: #333;
+}
+#home-category .carousel-item li {
+  display: block;
+  list-style: none;
+  width: 20%;
+  background-repeat: no-repeat;
+  background-size: 50px auto;
+  background-position: top center;
+  text-align: center;
+  padding-top: 50px;
+  color: #666;
+  font-size: 14px;
+}
+#home-category .carousel-item li.jingdian {
+  background-image: url("img/ball.png");
+}
+#home-category .carousel-item li.ktv {
+  background-image: url("img/book.png");
+}
+#home-category .carousel-item li.gouwu {
+  background-image: url("img/carrot.png");
+}
+#home-category .carousel-item li.shenghuofuwu {
+  background-image: url("img/cookies.png");
+}
+#home-category .carousel-item li.jianshenyundong {
+  background-image: url("img/croissant.png");
+}
+#home-category .carousel-item li.meifa {
+  background-image: url("img/doughnut.png");
+}
+#home-category .carousel-item li.qinzi {
+  background-image: url("img/drumstick.png");
+}
+#home-category .carousel-item li.xiaochikuaican {
+  background-image: url("img/flower.png");
+}
+#home-category .carousel-item li.zizhucan {
+  background-image: url("img/gear.png");
+}
+#home-category .carousel-item li.jiuba {
+  background-image: url("img/keyboard.png");
+}
+#home-category .carousel-item li.meishi {
+  background-image: url('img/lemon.png');
+}
+#home-category .carousel-item li.dianying {
+  background-image: url('img/music.png');
+}
+#home-category .carousel-item li.jiudian {
+  background-image: url('img/night.png');
+}
+#home-category .carousel-item li.xuixianyule {
+  background-image: url('img/pear.png');
+}
+#home-category .carousel-item li.waimai {
+  background-image: url('img/pizza.png');
+}
+#home-category .carousel-item li.huoguo {
+  background-image: url('img/radio.png');
+}
+#home-category .carousel-item li.liren {
+  background-image: url('img/sun.png');
+}
+#home-category .carousel-item li.dujiachuxing {
+  background-image: url('img/tree.png');
+}
+#home-category .carousel-item li.zuliaoanmo {
+  background-image: url('img/violin.png');
+}
+#home-category .carousel-item li.zhoubianyou {
+  background-image: url('img/wine.png');
+}
+#home-category .index-container {
+  margin-top: 10px;
+}
+#home-category .index-container ul {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+#home-category .index-container li {
+  list-style: none;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 4px;
+  background-color: #ccc;
+  margin: 0 3px;
+}
+#home-category .index-container li.active {
+  background-color: #e9203d;
+}

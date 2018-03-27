@@ -1,0 +1,10 @@
+.star-container {
+  display: inline-block;
+}
+.star-container i {
+  color: #999;
+  margin: 0 1.5px;
+}
+.star-container .light {
+  color: #e9203d;
+}

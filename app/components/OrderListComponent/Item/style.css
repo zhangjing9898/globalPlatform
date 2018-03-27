@@ -1,0 +1,47 @@
+.order-item-container {
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+.order-item-container .btn {
+  width: 80px;
+  text-align: center;
+  background-color: #e9203d;
+  color: #fff;
+  padding: 5px 0;
+  border: 0;
+  font-size: 16px;
+}
+.order-item-container .unseleted-btn {
+  background-color: #999;
+}
+.order-item-container .order-item-img {
+  width: 120px;
+  height: 90px;
+}
+.order-item-container .order-item-img img {
+  width: 100%;
+  height: 100%;
+}
+.order-item-container .order-item-comment {
+  width: auto;
+  text-align: right;
+}
+.order-item-container .order-item-comment button {
+  margin-top: 25px;
+}
+.order-item-container .order-item-content {
+  float: left;
+  margin-left: 10px;
+}
+.order-item-container .order-item-content span {
+  color: #666;
+  display: block;
+  text-align: left;
+  line-height: 1.5;
+}
+.order-item-container .comment-text-container {
+  margin-top: 10px;
+}
+.order-item-container .comment-text-container .comment-text {
+  border: 1px solid #f1f1f1;
+}
