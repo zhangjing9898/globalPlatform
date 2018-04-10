@@ -12,7 +12,9 @@ class Home extends React.Component{
 
   constructor(props) {
     super(props);
+    //这句话是一个起一个性能优化的作用，如果没有这句话，this.shouldComponentUpdate会永远返回一个true，那么这个函数就没意思，没有起到优化的作用
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+
   }
 
   render(){
