@@ -1,0 +1,12 @@
+.exit-btn{
+  width: 90%;
+  height: 40px;
+  background-color: #e9203d;
+  border: none;
+  color: white;
+  font-family: 微软雅黑;
+  font-size: 17px;
+  left: 5%;
+  position: absolute;
+  margin-top: 20px;
+}

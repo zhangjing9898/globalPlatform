@@ -11,7 +11,12 @@ export default function userInfo(state = initialState,action) {
       return {
         ...state,
         cityName: action.payload.cityName,
-        userName: '小明'
+        userName: ''
+      }
+    case actionTypes.USER_EXIT:
+      return{
+        ...state,
+        userName:''
       }
     case actionTypes.SAVE_HOMEAD:
       return {

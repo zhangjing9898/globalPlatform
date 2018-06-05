@@ -21,6 +21,7 @@
 }
 #login-container .phone-container input {
   margin-left: 20px;
+  width: 93%;
 }
 #login-container .password-container {
   margin-top: 10px;
@@ -30,14 +31,17 @@
   margin-right: 80px;
 }
 #login-container .password-container button {
-  width: 80px;
+  width: 76px;
   height: 100%;
-  font-size: 16px;
+  font-size: 13px;
   color: #e9203d;
   border: 0;
   background-color: #fff;
   text-align: center;
   float: right;
+  padding-left: 6px;
+  padding-top: 2px;
+  font-family: 微软雅黑;
 }
 #login-container .btn-login {
   width: 100%;

@@ -4,12 +4,19 @@ import { connect } from 'react-redux'
 import Header from "../../components/Header/index";
 import UserInfo from "../../components/UserInfo/index";
 import OrderList from "./subpage/OrderList";
-
+import "./index.css"
+import * as userInfoActions from '../../action/actionTypes'
 class User extends React.Component{
 
   constructor(props,context){
     super(props,context);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+  }
+
+  exit=()=>{
+    console.log("112");
+
+    window.history.back();
   }
 
   render(){
@@ -19,6 +26,7 @@ class User extends React.Component{
         <Header title="用户主页" backRouter="/" history={this.props.history} />
         <UserInfo username={userInfo.userName} city={userInfo.cityName}/>
         <OrderList username={userInfo.userName} />
+        <button className="exit-btn" onClick={this.props.exit}>退出</button>
       </div>
     )
   }
@@ -40,7 +48,10 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return {
-
+    exit:()=>{
+      dispatch({type:userInfoActions.USER_EXIT})
+      window.history.back();
+    }
   }
 }
 

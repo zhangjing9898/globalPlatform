@@ -1,23 +1,30 @@
 import React from 'react'
-import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-import './style.less'
-
-class LoginComponent extends React.Component{
-
-  constructor(props,context){
-    super(props,context);
-    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+export default class LoginForm extends React.Component {
+  constructor({ match }) {
+    super()
     this.state = {
-      phone:''
+      username: ''
     }
   }
 
-  render(){
+  changeHandle(e) {
+    this.setState({
+      username: e.target.value
+    })
+  }
+
+  clickHandle() {
+    const username = this.state.username
+    const loginHandle = this.props.loginHandle
+    loginHandle(username);
+  }
+
+  render() {
     return (
       <div id="login-container">
         <div className="input-container phone-container">
-          <i className="icon-user"></i>
+          <i className="icon-tablet"></i>
           <input
             type="text"
             name="phoneNumber"
@@ -35,17 +42,4 @@ class LoginComponent extends React.Component{
       </div>
     )
   }
-
-  changeHandle(e){
-    this.setState({
-      phone:e.target.value
-    })
-  }
-  clickHandle(){
-    const userName = this.state.phone;
-    const loginHandle = this.props.loginHandle;
-    loginHandle(userName);
-  }
 }
-
-export default LoginComponent

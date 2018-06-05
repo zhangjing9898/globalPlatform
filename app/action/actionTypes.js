@@ -1,5 +1,7 @@
 //获取用户所在的城市
 export const USER_CURRENTCITY =  'USER_CURRENTCITY'
+//退出用户
+export const USER_EXIT="USER_EXIT"
 //获取 广告信息
 export const GET_HOMEAD = 'GET_HOMEAD'
 //redux储存 广告信息

@@ -12,7 +12,7 @@ class Login extends React.Component{
     super(props);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.state = ({
-      checking:true
+      checking:false
     })
   }
 
@@ -36,6 +36,7 @@ class Login extends React.Component{
 
   doCheck(){
     const userInfo = this.props.userInfo;
+    console.log("userInfo:"+userInfo.userName);
     if(userInfo.userName){
       //already login
       alert("您已登录~")
