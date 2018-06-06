@@ -22,6 +22,7 @@ export default class LoginForm extends React.Component {
 
   render() {
     return (
+    <div className="login-area">
       <div id="login-container">
         <div className="input-container phone-container">
           <i className="icon-tablet"></i>
@@ -40,6 +41,7 @@ export default class LoginForm extends React.Component {
         </div>
         <button className="btn-login" onClick={this.clickHandle.bind(this)}>登录</button>
       </div>
+    </div>
     )
   }
 }

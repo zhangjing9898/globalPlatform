@@ -3,7 +3,8 @@ import createHistory from 'history/createBrowserHistory'
 import { connect } from 'react-redux'
 import  {
   Router,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom'
 
 import Home from '../containers/Home'
@@ -13,8 +14,7 @@ import NotFound from '../containers/NotFound'
 import Detail from '../containers/Detail'
 import Login from '../containers/Login'
 import User from '../containers/User'
-import NoMatch from "../containers/404/404"
-
+import NoMatch from "../containers/404/404";
 import { initCity } from '../action/userinfo'
 
 import localStore from '../utils/localStore'
@@ -31,14 +31,15 @@ class RouteMap extends React.Component{
     return (
       <Router history={history}>
         <switch>
+          {/*exact是Route下的一条属性，一般而言，react路由会匹配所有匹配到的路由组价，exact能够使得路由的匹配更严格一些。*/}
           <Route exact path="/" component={Home}></Route>
           <Route path="/city" component={City}></Route>
-          {/*<Route path="/login/:router?" component={Login}></Route>*/}
-          <Route path="/login" component={Login}></Route>
-          <Route path="/user" component={User}></Route>
+          <Route path="/login/:router?" component={Login}></Route>
+          {/*<Route  path="/login" component={Login}></Route>*/}
+          <Route  path="/user" component={User}></Route>
           <Route path="/search/:category/:keyword?" component={Search}></Route>
           <Route path="/detail/:id" component={ Detail }></Route>
-          <Route component={NoMatch}></Route>
+          <Route component={NoMatch}/>
         </switch>
       </Router>
     )

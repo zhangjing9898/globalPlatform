@@ -10,7 +10,9 @@
     "start": "set NODE_ENV=dev && webpack-dev-server --progress --colors --port 8080"
   },
   "dependencies": {
+    "antd": "^3.6.1",
     "axios": "^0.16.2",
+    "babel-plugin-import": "^1.7.0",
     "classnames": "^2.2.5",
     "es6-promise": "^4.1.1",
     "history": "^4.6.1",

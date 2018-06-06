@@ -21,7 +21,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         include: /app/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+        query: {
+          cacheDirectory: true,
+          plugins: [["import", { libraryName: "antd", style: "css" }]]
+        }
       },
       {
         test: /\.css$/,
