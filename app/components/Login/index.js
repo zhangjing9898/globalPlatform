@@ -16,11 +16,13 @@ class LoginComponent extends React.Component{
     super(props,context);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.state = {
-      phone:''
+      phone:'',
+      didCode:true,
+      num:60
     }
   }
   callback=(key)=>{
-  console.log(key);
+    console.log(key);
   }
   handleSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +32,25 @@ class LoginComponent extends React.Component{
       }
     });
   }
+  tick=()=>{
+    if(this.state.num>0){
+      this.setState({
+        num:this.state.num-1
+      })
+    }else{
+      this.setState({
+        num:60,
+        didCode:true
+      })
+    }
+
+  }
+  componentDidMount(){
+
+  }
+  componentWillUnmount(){
+    clearInterval(this.interval)
+  }
   render(){
     return (
       <div id="login-container" onChange={callback}>
@@ -37,7 +58,10 @@ class LoginComponent extends React.Component{
           <TabPane tab="账号密码登录" key="1">
             <Form  className="login-form">
               <FormItem>
-                <Input prefix={<Icon type="user" style={{ color: 'rgb(233, 32, 61)' }} />} placeholder="请输入您的账号" />
+                <Input prefix={<Icon type="user" style={{ color: 'rgb(233, 32, 61)' }} />}
+                       onChange={this.changeHandle.bind(this)}
+                       value={this.state.phone}
+                       placeholder="请输入您的账号" />
 
               </FormItem>
               <FormItem>
@@ -47,7 +71,9 @@ class LoginComponent extends React.Component{
                 <Checkbox>记住密码</Checkbox>
                 <a className="login-form-forgot" href="">忘记密码?</a>
               </FormItem>
-              <Button type="primary" htmlType="submit" className="login-form-button">
+              <Button type="primary" htmlType="submit" className="login-form-button"
+                      onClick={this.clickHandle.bind(this)}
+              >
                 登录
               </Button>
             </Form>
@@ -55,22 +81,33 @@ class LoginComponent extends React.Component{
           <TabPane tab="手机验证登录" key="2">
             <Form  className="login-form">
               <FormItem>
-                <Input prefix={<Icon type="phone" style={{ color: 'rgb(233, 32, 61)' }} />} placeholder="请输入您的手机号" />
+                <Input prefix={<Icon type="phone" style={{ color: 'rgb(233, 32, 61)' }} />}
+                       onChange={this.changeHandle.bind(this)}
+                       value={this.state.phone}
+                       placeholder="请输入您的手机号" />
 
               </FormItem>
               <FormItem>
-                {/*<Input id="code-input" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />*/}
                 <Input
                   prefix={<Icon type="mail" style={{ color: 'rgb(233, 32, 61)' }} />}
                   type="text"
                   style={{ width: '70%', marginRight: '3%',float:"left" }}
                   placeholder="请输入验证码"
                 />
-                <Button type="primary" className="code-btn" >
-                  发送验证码
-                </Button>
+                {
+                  this.state.didCode?
+                    <Button type="primary" className="code-btn" onClick={this.changeCodeState.bind(this)}>
+                      发送验证码
+                    </Button>
+                    :
+                    <Button  type="default" className="code-btn" disabled>
+                      重新获取{this.state.num}s
+                    </Button>
+                }
+
               </FormItem>
-              <Button type="primary" htmlType="submit" className="login-form-button">
+              <Button type="primary" htmlType="submit" className="login-form-button"
+                        onClick={this.clickHandle.bind(this)}>
                 登录
               </Button>
             </Form>
@@ -79,6 +116,13 @@ class LoginComponent extends React.Component{
       </div>
 
     )
+  }
+
+  changeCodeState(){
+    this.setState({
+      didCode:false
+    })
+    this.interval=setInterval(this.tick,1000)
   }
 
   changeHandle(e){
