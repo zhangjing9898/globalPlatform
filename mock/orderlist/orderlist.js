@@ -14,7 +14,7 @@ module.exports = [
     commentState: 0
   },
   {
-    img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016201645858-1342445625.png',
+    img: 'http://uniah.com/zhangjing/order3.png',
     title: '好吃自出餐',
     count: 2,
     price: '110',

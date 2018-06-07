@@ -3,7 +3,8 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
 import Header from "../../components/Header/index";
 import UserInfo from "../../components/UserInfo/index";
-import OrderList from "./subpage/OrderList";
+import MineList from "./subpage/MineList"
+import OrderList from "../Order/subpage/OrderList";
 import "./index.css"
 import * as userInfoActions from '../../action/actionTypes'
 class User extends React.Component{
@@ -14,8 +15,6 @@ class User extends React.Component{
   }
 
   exit=()=>{
-    console.log("112");
-
     window.history.back();
   }
 
@@ -25,7 +24,7 @@ class User extends React.Component{
       <div>
         <Header title="用户主页" backRouter="/" history={this.props.history} />
         <UserInfo username={userInfo.userName} city={userInfo.cityName}/>
-        <OrderList username={userInfo.userName} />
+        <MineList />
         <button className="exit-btn" onClick={this.props.exit}>退出</button>
       </div>
     )

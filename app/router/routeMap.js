@@ -15,6 +15,7 @@ import Detail from '../containers/Detail'
 import Login from '../containers/Login'
 import User from '../containers/User'
 import NoMatch from "../containers/404/404";
+import Order from "../containers/Order/index"
 import { initCity } from '../action/userinfo'
 
 import localStore from '../utils/localStore'
@@ -35,7 +36,7 @@ class RouteMap extends React.Component{
           <Route exact path="/" component={Home}></Route>
           <Route path="/city" component={City}></Route>
           <Route path="/login/:router?" component={Login}></Route>
-          {/*<Route  path="/login" component={Login}></Route>*/}
+          <Route  path="/order" component={Order}></Route>
           <Route  path="/user" component={User}></Route>
           <Route path="/search/:category/:keyword?" component={Search}></Route>
           <Route path="/detail/:id" component={ Detail }></Route>
