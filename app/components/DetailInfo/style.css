@@ -1,15 +1,18 @@
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(38, 38, 38, 0.14);
+}
 .detail-info-container {
   background-color: #fff;
-  padding: 10px;
+  height: 324px;
 }
 .detail-info-container .info-img-container {
-  width: 130px;
+  width: 100%;
 }
 .detail-info-container .info-img-container img {
   width: 100%;
-}
-.detail-info-container .info-content {
-  margin-left: 140px;
+  height: 230px;
 }
 .detail-info-container .info-content h1 {
   font-size: 20px;
@@ -17,11 +20,41 @@
 }
 .detail-info-container .info-content .star-container {
   margin: 5px 0;
+  width: 100%;
 }
 .detail-info-container .info-content .star-container .price {
   margin-left: 14px;
   color: #e9203d;
   font-size: 22px;
+}
+.detail-info-container .info-content .star-container .bigger {
+  font-size: 30px;
+  margin-left: 2px;
+}
+.detail-info-container .info-content .star-container .old {
+  margin-left: 15px;
+}
+.detail-info-container .info-content .star-container .buy-btn {
+  float: right;
+  margin-top: 9px;
+  margin-right: 13px;
+  background-color: #e9203d;
+  border-color: #e9203d;
+}
+.detail-info-container .info-content .buyed-info {
+  padding: 7px 11px;
+  color: #8bc34a;
+}
+.detail-info-container .info-content .buyed-info .exit {
+  float: left;
+}
+.detail-info-container .info-content .buyed-info .exit .img {
+  width: 22px;
+  margin-right: 5px;
+}
+.detail-info-container .info-content .buyed-info .right {
+  float: right;
+  color: #595959;
 }
 .detail-info-container .info-content .sub-title {
   color: #999;
@@ -31,4 +64,27 @@
   line-height: 1.5;
   clear: both;
   margin-top: 13px;
+}
+.store-detail {
+  width: 100%;
+  height: 238px;
+  background-color: white;
+  margin-top: 15px;
+  padding: 10px 20px;
+}
+.store-detail .title {
+  font-size: 16px;
+  font-family: 微软雅黑;
+  margin-bottom: 11px;
+}
+.store-detail .sub-title {
+  color: #e9203d;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.store-detail .sub-info {
+  color: black;
 }

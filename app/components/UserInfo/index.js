@@ -9,7 +9,6 @@ class UserInfo extends React.Component{
     super(props,context);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
-
   render(){
     return (
       <div className="userinfo-container">
@@ -18,7 +17,6 @@ class UserInfo extends React.Component{
         </div>
         <div className="user-info">
           <p>
-
             <span className="username-title">{this.props.username}</span>
           </p>
           <p>

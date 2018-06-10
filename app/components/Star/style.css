@@ -1,10 +1,20 @@
-.star-container {
+.star-area {
   display: inline-block;
+  width: 100%;
+  background-color: white;
+  margin-top: 18px;
+  padding: 10px 13px;
 }
-.star-container i {
+.star-area .star-detail-area {
+  float: left;
+}
+.star-area .star-detail-area i {
   color: #999;
   margin: 0 1.5px;
 }
-.star-container .light {
+.star-area .star-detail-area .light {
   color: #e9203d;
+}
+.star-area .right {
+  float: right;
 }

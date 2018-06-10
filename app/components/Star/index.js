@@ -18,14 +18,18 @@ class Star extends React.Component{
     }
 
     return (
-      <div className="star-container">
-        {
-          [1,2,3,4,5].map((item,index) =>{
-            const lightClass = star >= item ? "light":'';
-            return <i key={index} className={"icon-star " +lightClass}></i>
-          })
-        }
+      <div className="star-area">
+        <div className="star-detail-area">
+          {
+            [1,2,3,4,5].map((item,index) =>{
+              const lightClass = star >= item ? "light":'';
+              return <i key={index} className={"icon-star " +lightClass}></i>
+            })
+          }
+        </div>
+        <div className="right">评分良好</div>
       </div>
+
     )
   }
 
