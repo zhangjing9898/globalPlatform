@@ -10,12 +10,26 @@
 .buy-store-container .item-container button {
   font-size: 16px;
   width: 100px;
-  background-color: #f1f1f1;
-  color: #666;
-  border: 1px solid #666;
+  background-color: #e9203d;
+  color: #fff;
+  border: 1px solid #e9203d;
   padding: 5px 0;
+  border-radius: 5px;
+}
+.buy-store-container .item-container button:focus {
+  outline: none;
 }
 .buy-store-container .item-container button.selected {
-  color: #e9203d;
-  border: 1px solid #e9203d;
+  color: #ffffff;
+  border: 1px solid #808080;
+  background-color: grey;
+}
+.buy-store-container .item-container button.buyed {
+  font-size: 16px;
+  width: 100px;
+  background-color: #ff9800c7;
+  color: #fff;
+  border: 1px solid #ff9800c7;
+  padding: 5px 0;
+  border-radius: 5px;
 }

@@ -22,18 +22,24 @@ class BuyAndStore extends React.Component{
           }
         </div>
         <div className="item-container float-right">
-          <button onClick={this.buyClickHandle.bind(this)}>购买</button>
+          {
+            //是否购买
+            this.props.isBuy?
+              <button className="buyed" onClick={this.buyClickHandle.bind(this)}>已购买</button>
+              :
+              <button onClick={this.buyClickHandle.bind(this)}>购买</button>
+          }
+
         </div>
       </div>
     )
   }
 
   buyClickHandle(){
-    const buyHandle = this.props.buyHandle;
-    buyHandle();
+    this.props.buyHandle();
   }
   storeClickHandle(){
-    const storeHandle = this.props.storeHandle();
+    this.props.storeHandle();
   }
 }
 

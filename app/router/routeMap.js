@@ -39,7 +39,7 @@ class RouteMap extends React.Component{
           <Route  path="/order" component={Order}></Route>
           <Route  path="/user" component={User}></Route>
           <Route path="/search/:category/:keyword?" component={Search}></Route>
-          <Route path="/detail/:id" component={ Detail }></Route>
+          <Route path="/detail" component={ Detail }></Route>
           <Route component={NoMatch}/>
         </switch>
       </Router>

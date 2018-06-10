@@ -13,7 +13,8 @@ class Buy extends React.Component{
     super(props,context);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.state = {
-      isStore:false
+      isStore:false,
+      isBuy:false
     }
   }
 
@@ -21,6 +22,7 @@ class Buy extends React.Component{
     return (
       <div>
          <BuyAndStore isStore = {this.state.isStore}
+                        isBuy={this.state.isBuy}
                         buyHandle = {this.buyHandle.bind(this)}
                         storeHandle = {this.storeHandle.bind(this)} />
       </div>
@@ -29,7 +31,7 @@ class Buy extends React.Component{
 
   componentDidMount(){
     //验证当前商户是否被收藏
-    this.checkStoreState();
+    // this.checkStoreState();
   }
 
   //检验当前商户是否被收藏
@@ -71,6 +73,10 @@ class Buy extends React.Component{
       return;
     }
     //此过程为模拟购买，因此可省去复杂的购买过程
+    //修改状态
+    this.setState({
+      isBuy:!this.state.isBuy
+    })
     //跳转到用户主页
     this.props.history.push('/user');
   }
@@ -80,9 +86,10 @@ class Buy extends React.Component{
     //验证登录
     const loginFlag = this.loginCheck();
     if(!loginFlag){
+      alert("未登录！");
       return;
     }
-
+    console.log("collection！！！")
     const id = this.props.id;
     const storeActions = this.props.storeActions;
 
@@ -101,6 +108,7 @@ class Buy extends React.Component{
     this.setState({
       isStore:!this.state.isStore
     })
+    this.props.history.push('/user');
   }
 }
 
