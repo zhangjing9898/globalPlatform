@@ -1,7 +1,6 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-
-import './style.less'
+import { Button } from 'antd';
 
 class BuyAndStore extends React.Component{
 
@@ -12,25 +11,23 @@ class BuyAndStore extends React.Component{
 
   render(){
     return (
-      <div className="buy-store-container clear-fix">
-        <div className="item-container float-left">
-          {
-            //是否已经收藏了
-            this.props.isStore?
-            <button className="selected" onClick={this.storeClickHandle.bind(this)}>已收藏</button>
-            :<button onClick={this.storeClickHandle.bind(this)}>收藏</button>
-          }
-        </div>
-        <div className="item-container float-right">
+      <div >
+        {/*<div className="item-container float-left">*/}
+          {/*{*/}
+            {/*//是否已经收藏了*/}
+            {/*this.props.isStore?*/}
+            {/*<button className="selected" onClick={this.storeClickHandle.bind(this)}>已收藏</button>*/}
+            {/*:<button onClick={this.storeClickHandle.bind(this)}>收藏</button>*/}
+          {/*}*/}
+        {/*</div>*/}
           {
             //是否购买
             this.props.isBuy?
-              <button className="buyed" onClick={this.buyClickHandle.bind(this)}>已购买</button>
+              <Button  type="primary"  className="buy-had-btn" disabled >已购买</Button>
               :
-              <button onClick={this.buyClickHandle.bind(this)}>购买</button>
+              <Button type="primary" className="buy-btn" onClick={this.buyClickHandle.bind(this)}>立即抢购</Button>
           }
 
-        </div>
       </div>
     )
   }
@@ -38,9 +35,9 @@ class BuyAndStore extends React.Component{
   buyClickHandle(){
     this.props.buyHandle();
   }
-  storeClickHandle(){
-    this.props.storeHandle();
-  }
+  // storeClickHandle(){
+  //   this.props.storeHandle();
+  // }
 }
 
 export default BuyAndStore

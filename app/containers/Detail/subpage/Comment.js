@@ -25,7 +25,7 @@ class Comment extends React.Component{
   render(){
     return (
       <div className="detail-comment-subpage">
-        <h2>用户点评</h2>
+        <h2 className="user-title">用户点评</h2>
         {
           this.state.data.length?
             <ListComponent data={this.state.data} />

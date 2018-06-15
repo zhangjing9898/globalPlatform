@@ -1,5 +1,5 @@
 module.exports = {
-  img: 'http://uniah.com/zhangjing/list2.png',
+  img: 'http://uniah.com/zhangjing/detail.png',
   title: '天下第一锅',
   star: 4,
   price: '88.5',

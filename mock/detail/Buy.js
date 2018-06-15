@@ -13,16 +13,18 @@ class Buy extends React.Component{
     super(props,context);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     this.state = {
-      buy:false
+      isStore:false,
+      isBuy:false
     }
   }
 
   render(){
     return (
       <div>
-         <BuyAndStore
-                        isBuy={this.state.buy}
-                        buyHandle = {this.buyHandle.bind(this)} />
+         <BuyAndStore isStore = {this.state.isStore}
+                        isBuy={this.state.isBuy}
+                        buyHandle = {this.buyHandle.bind(this)}
+                        storeHandle = {this.storeHandle.bind(this)} />
       </div>
     )
   }
@@ -66,17 +68,17 @@ class Buy extends React.Component{
   //购买事件
   buyHandle(){
     //验证登录，未登录则return
-    // const loginFlag = this.loginCheck();
-    // if(!loginFlag){
-    //   return;
-    // }
+    const loginFlag = this.loginCheck();
+    if(!loginFlag){
+      return;
+    }
     //此过程为模拟购买，因此可省去复杂的购买过程
     //修改状态
     this.setState({
-      buy:!this.state.buy
+      isBuy:!this.state.isBuy
     })
     //跳转到用户主页
-    // this.props.history.push('/user');
+    this.props.history.push('/user');
   }
 
   //收藏事件

@@ -1,0 +1,10 @@
+.comment-list .person-img {
+  width: 40px;
+  float: left;
+  margin-right: 9px;
+}
+.comment-list .date {
+  float: right;
+  margin-top: -22px;
+  margin-right: 16px;
+}

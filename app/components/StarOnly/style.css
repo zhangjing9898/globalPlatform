@@ -1,0 +1,18 @@
+.star-area-only {
+  display: inline-block;
+  background-color: white;
+  padding: 0;
+}
+.star-area-only .star-detail-area {
+  float: left;
+}
+.star-area-only .star-detail-area i {
+  color: #999;
+  margin: 0 1.5px;
+}
+.star-area-only .star-detail-area .light {
+  color: #e9203d;
+}
+.star-area-only .right {
+  float: right;
+}

@@ -1,37 +1,46 @@
-import React,{ Component } from 'react'
+import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 import './style.less'
-import Star from "../Star/index";
 
-class DetailInfo extends React.Component{
+class BuyAndStore extends React.Component{
 
-  constructor(props){
-    super(props);
+  constructor(props,context){
+    super(props,context);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
 
   render(){
-    const data = this.props.data;
     return (
-      <div className="detail-info-container">
-        <div className="info-container clear-fix">
-          <div className="info-img-container float-left">
-            <img src={data.img}/>
-          </div>
-          <div className="info-content">
-            <h1>{data.title}</h1>
-            <div className="star-container">
-              <Star star={data.star}/>
-              <span className="price">￥{data.price}</span>
-            </div>
-            <p className="sub-title">{data.subTitle}</p>
-          </div>
-          <p dangerouslySetInnerHTML={{__html:data.desc}} className="info-desc"></p>
+      <div className="buy-store-container clear-fix">
+        <div className="item-container float-left">
+          {
+            //是否已经收藏了
+            this.props.isStore?
+            <button className="selected" onClick={this.storeClickHandle.bind(this)}>已收藏</button>
+            :<button onClick={this.storeClickHandle.bind(this)}>收藏</button>
+          }
+        </div>
+        <div className="item-container float-right">
+          {
+            //是否购买
+            this.props.isBuy?
+              <button className="buyed" onClick={this.buyClickHandle.bind(this)}>已购买</button>
+              :
+              <button onClick={this.buyClickHandle.bind(this)}>购买</button>
+          }
+
         </div>
       </div>
     )
   }
+
+  buyClickHandle(){
+    this.props.buyHandle();
+  }
+  storeClickHandle(){
+    this.props.storeHandle();
+  }
 }
 
-export default DetailInfo
+export default BuyAndStore

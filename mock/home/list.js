@@ -11,7 +11,7 @@ module.exports = {
       id: Math.random().toString().slice(2)
     },
     {
-      img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016201645858-1342445625.png',
+      img: 'http://uniah.com/zhangjing/list3.png',
       title: '北京开源饭店',
       subTitle: '[望京]自助晚餐',
       price: '98',
@@ -20,7 +20,7 @@ module.exports = {
       id: Math.random().toString().slice(2)
     },
     {
-      img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016201652952-1050532278.png',
+      img: 'http://uniah.com/zhangjing/list4.png',
       title: '服装定制',
       subTitle: '原价xx元，现价xx元，可修改一次',
       price: '1980',
@@ -29,7 +29,7 @@ module.exports = {
       id: Math.random().toString().slice(2)
     },
     {
-      img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016201700186-1351787273.png',
+      img: 'http://uniah.com/zhangjing/list5.png',
       title: '婚纱摄影',
       subTitle: '免费试穿，拍照留念',
       price: '2899',
